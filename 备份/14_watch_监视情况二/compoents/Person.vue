@@ -28,16 +28,21 @@
   function changePerson() {
     person.value = { name: "李四", age: 90 };
   }
-  //监视，情况2：监测【ref】定义的【对象类型】，监视的是对象的地址，若想监视对象内部属性的变化，需要手动添加深度监视
+  //监视，情况2：监测【ref】定义的【对象类型】，监视的是对象的地址，
+  // 若想监视对象内部属性的变化，需要手动添加深度监视
   /*watch参数1：被监视的数据
   watch参数2：监视的回调
   watch参数3：配置对象（deep、immediate等等...）
   函数接收参数看顺序
   */
-  watch(
+  const stopWatch = watch(
     person,
     (value) => {
       console.log("person变化了", value);
+      if (value.age > 20) {
+        console.log("20岁了，不管了");
+        stopWatch();
+      }
     },
     //deep是否开启深度监视
     //immediate 是否开启立即监视，新值为当前对象，旧值为undefined

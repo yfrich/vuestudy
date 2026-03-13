@@ -7,7 +7,6 @@
       <option value="3">3</option>
     </select>
     <button @click="add">加</button>
-
     <button @click="minus">减</button>
   </div>
 </template>

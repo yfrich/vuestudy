@@ -12,6 +12,9 @@ export default function () {
   }
   //钩子
   onMounted(() => {
+    //挂载完成后进行数据+1处理
+    console.log("挂载完成后进行数据+1处理");
+
     add();
   });
   return { sum, add, bigSum };

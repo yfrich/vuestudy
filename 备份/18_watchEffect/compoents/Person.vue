@@ -36,8 +36,15 @@
   //监视 -watchEffect
   watchEffect(() => {
     //首次加载会执行
-    // console.log(1);
-    if (temp.value >= 60 || height.value >= 80) {
+    // console.log("我是首次加载");
+    // if (temp.value >= 60 || height.value >= 80) {
+    //   console.log("给服务器发请求");
+    // }
+    //上述方式会触发短路逻辑
+    //优化： 1 拆分成独立的变量
+    const isTempValid = temp.value >= 60;
+    const isHeight = height.value >= 80;
+    if (isTempValid || isHeight) {
       console.log("给服务器发请求");
     }
   });

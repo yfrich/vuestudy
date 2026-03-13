@@ -20,6 +20,8 @@ export default function () {
   }
   //钩子
   onMounted(() => {
+    //挂载完成后默认添加一张照片
+    console.log("挂载完成后默认添加一张照片");
     getDog();
   });
   //向外部提供东西

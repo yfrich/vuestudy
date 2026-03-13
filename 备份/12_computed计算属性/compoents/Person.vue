@@ -3,6 +3,7 @@
     姓：<input type="text" v-model="firName" /> <br />
     名：<input type="text" v-model="lastName" /><br />
     <button @click="changeFullName">将全名改为li-si</button> <br />
+    <button @click="fullName2">fullName2将全名改为li-si</button> <br />
     <!-- 尽量让模板简单 违背VUE原则 -->
     <!-- 姓名：<span
       >{{ firName.slice(0, 1).toUpperCase() + firName.slice(1) }}-{{
@@ -35,6 +36,7 @@
   //这么定义的fullName是可读可写
   let fullName = computed({
     get() {
+      console.log("测试缓存");
       return (
         firName.value.slice(0, 1).toUpperCase() +
         firName.value.slice(1) +
@@ -51,7 +53,7 @@
   });
   //方法无缓存
   function fullName2() {
-    console.log(2);
+    console.log("测试缓存2");
     return (
       firName.value.slice(0, 1).toUpperCase() +
       firName.value.slice(1) +

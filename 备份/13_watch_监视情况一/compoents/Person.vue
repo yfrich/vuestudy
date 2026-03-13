@@ -23,6 +23,7 @@
     if (newValue >= 10) {
       //内部如何调用外部返回值的呢？
       stopWatch();
+      console.log("停止监视了");
     }
   });
 </script>

@@ -1,6 +1,11 @@
-//引入createApp 用于创建应用
 import { createApp } from "vue";
-//引入根组件
 import App from "./App.vue";
-//创建一个应用基于根组件，并且放置到#app元素中
-createApp(App).mount("#app");
+//第一步引入pinia
+import { createPinia } from "pinia";
+
+const app = createApp(App);
+//第二步，创建pinia
+const pinia = createPinia();
+//第三步安装pinia
+app.use(pinia);
+app.mount("#app");

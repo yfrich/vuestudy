@@ -41,7 +41,7 @@
     Object.assign(person, { name: "李四", age: 90 });
   }
   function Test() {
-    obj.a.b.c = 888;
+    obj.a.b.c += 1;
   }
   //监测 情况3：监测【reactive】定义的【对象类型】数据，且默认是开启深度监视的,是不可以关闭的。
   //reactive 默认隐式创建了深层的监听
